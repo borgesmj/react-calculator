@@ -7,8 +7,7 @@ function App() {
 
   return (
     <div className='flex flex-col m-auto w-full md:w-2/5 xl:w-1/5'>
-      <Pantalla/>
-      <Teclado/>
+
     </div>
   )
 }
