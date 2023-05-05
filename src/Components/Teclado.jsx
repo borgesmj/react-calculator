@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Teclado = () => {
+const Teclado = ({answer, setAnswer, expression, setExpression}) => {
   
   const keyboard = [
     {id: 'seven', content: '7'},
@@ -22,12 +22,22 @@ const Teclado = () => {
     {id: 'clear', content: 'C'},
   ]
 
-  const numRegex =/\d+/;
+  const numRegex =/\d+/g;
   const clearRegex = /C/
-  const opRegex = /[+\-*/]/
+  const opRegex = /[+\-*/]/g
+  const dotRegex = /./g
+  const equalRegex = /=/g
 
-  const handleClick = () => {
-    console.log('click')
+  const handleClick = (item) => {
+    if (clearRegex.test(item.content)){
+      setExpression('')
+      console.log(setAnswer)
+    }
+
+    if (numRegex.test(item.content)){
+      setExpression(expression+item.content)
+    }
+    console.log(item.content)
   }
  
   return (
@@ -43,7 +53,7 @@ const Teclado = () => {
                   ${opRegex.test(item.content) ? 'bg-indigo-100' : ''}
                   ${opRegex.test(item.content) ? 'hover:bg-indigo-400' : ''}
                   `}
-                  onClick={handleClick}
+                  onClick={() => handleClick(item)}
                 >
                     {item.content}
                 </button>

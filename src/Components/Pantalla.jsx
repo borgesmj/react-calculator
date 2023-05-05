@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Pantalla = () => {
+const Pantalla = ({answer, setAnswer, expression, setExpression}) => {
   return (
     <div className='text-2xl'>
       <form 
@@ -12,13 +12,14 @@ const Pantalla = () => {
             id="" 
             disabled 
             className='w-full bg-transparent text-right text-black placeholder:text-black' 
-            placeholder='0' 
+            placeholder='0'
+            value={expression} 
           />
       </form>
       <p 
         className='w-full bg-gray-100 text-right text-black'
           >
-            0
+            {answer}
       </p>
     </div>
   )
