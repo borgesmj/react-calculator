@@ -2,7 +2,7 @@ import React from 'react'
 
 const Pantalla = ({answer, setAnswer, expression, setExpression}) => {
   return (
-    <div className='text-2xl'>
+    <div className=''>
       <form 
           className='bg-gray-100'
           >
@@ -11,16 +11,20 @@ const Pantalla = ({answer, setAnswer, expression, setExpression}) => {
             name="" 
             id="" 
             disabled 
-            className='w-full bg-transparent text-right text-black placeholder:text-black' 
+            className='w-full bg-transparent text-right text-black placeholder:text-black text-xl' 
             placeholder='0'
             value={expression} 
           />
+          <input 
+            type="text" 
+            name="" 
+            id="display" 
+            disabled 
+            className='w-full bg-transparent text-right text-black placeholder:text-black text-3xl' 
+            placeholder='0'
+            value={answer} 
+          />
       </form>
-      <p 
-        className='w-full bg-gray-100 text-right text-black'
-          >
-            {answer}
-      </p>
     </div>
   )
 }
